@@ -1,0 +1,13 @@
+
+.videobg{
+    height: 100%;
+    position: absolute;
+    z-index: -100;
+    
+}
+.home{
+    background: url("../../public/bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
