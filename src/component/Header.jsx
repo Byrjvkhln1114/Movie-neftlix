@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { MovieContext } from "../Context";
 export const Header = () => {
-  const [input, setInput] = useState("");
+  const { setInput, dataRetriever } = useContext(MovieContext);
   const inputListener = (event) => {
     setInput(event.target.value);
   };
@@ -26,8 +27,13 @@ export const Header = () => {
         </div>
         <div className="d-flex gap-4 justify-content-end w-25 ">
           <div className="search-icon">
-            <img src="search.svg" alt="" />
-            <input onChange={inputListener} type="text" />
+            <div
+              style={{ display: "flex", gap: "20px" }}
+              onClick={dataRetriever}
+            >
+              <input onChange={inputListener} type="text" />
+              <img id="search-img" src="search.svg" alt="" />
+            </div>
           </div>
           <div className="direct">DIRECT</div>
           <div className="ring">

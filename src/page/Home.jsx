@@ -1,17 +1,18 @@
 import { Header, Movies } from "../component";
 import {} from "../css/home.css";
 import video from "../videos/background.mp4";
+import { useContext } from "react";
+import { MovieContext } from "../Context";
+import { Body } from "../component";
 export const Home = () => {
   return (
     <div>
-      {/* <video className="videobg" src={video} autoPlay loop muted></video> */}
       <div
-        className=" home d-flex justify-content-center"
+        className=" home d-flex flex-column align-items-center"
         style={{ width: "100vw", height: "100vh" }}
       >
         <div className="m-4" style={{ width: "93%" }}>
           <Header />
-
           <div
             style={{ width: "547px", height: "75vh" }}
             className="logo-2 d-flex flex-column justify-content-center gap-5"
@@ -51,7 +52,7 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <Movies />
+      <Body />
     </div>
   );
 };
