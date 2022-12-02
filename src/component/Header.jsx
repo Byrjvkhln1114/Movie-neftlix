@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { MovieContext } from "../Context";
+
 export const Header = () => {
   const { setInput, dataRetriever } = useContext(MovieContext);
   const inputListener = (event) => {
@@ -27,12 +28,25 @@ export const Header = () => {
         </div>
         <div className="d-flex gap-4 justify-content-end w-25 ">
           <div className="search-icon">
-            <div
-              style={{ display: "flex", gap: "20px" }}
-              onClick={dataRetriever}
-            >
-              <input onChange={inputListener} type="text" />
-              <img id="search-img" src="search.svg" alt="" />
+            <div style={{ display: "flex", gap: "20px" }}>
+              <input
+                id="forcheck"
+                style={{
+                  background: "rgb(51, 51, 51)",
+                  color: "white",
+                  borderRadius: "5px",
+                  width: "0px",
+                }}
+                className="border border-none color-lght"
+                onChange={inputListener}
+                type="text"
+              />
+              <img
+                onClick={dataRetriever}
+                id="search-img"
+                src="search.svg"
+                alt=""
+              />
             </div>
           </div>
           <div className="direct">DIRECT</div>
